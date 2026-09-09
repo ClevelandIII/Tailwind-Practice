@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "comic";
+    src: url("assets/AnimeAce20BbItalic-vlA.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@theme {
+    --font-comic: "comic", "serif";
+    --color-koku-purple: #76418c;
+}
+
+.id{
+    background-image: url(../src/assets/koku_print.png);
+}
