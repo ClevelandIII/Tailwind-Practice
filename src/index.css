@@ -18,3 +18,11 @@ td {
     border: black solid 3px;
     padding: 0.5rem;
 }
+
+td {
+    font-size: small;
+}
+
+P {
+    font-size: small;
+}

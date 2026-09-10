@@ -33,14 +33,14 @@ export default function Main() {
                     </div>
 
                     <div className="grid grid-cols-1 gap-1">
-                        <p>
+                        <p className="text-sm">
                             Kokushibo (黒こく死し牟ぼう Kokushibō?) is a major
                             supporting antagonist of Demon Slayer: Kimetsu no
                             Yaiba. He is a demon affiliated with the Twelve
                             Kizuki, holding the highest position, Upper Rank One
                             (上じょう弦げんの壱いち Jōgen no Ichi?).
                         </p>
-                        <p>
+                        <p className="text-sm">
                             Nearly five centuries ago during the Sengoku Era,
                             Kokushibo was a human by the name of Michikatsu
                             Tsugikuni (継つぎ国くに 巌みち勝かつ Tsugikuni
@@ -48,7 +48,7 @@ export default function Main() {
                             twin brother of Yoriichi Tsugikuni, the strongest
                             Demon Slayer to ever live.
                         </p>
-                        <p>
+                        <p className="text-sm">
                             Kokushibo is also the ancestor of Muichiro Tokito
                             and Yuichiro Tokito, and is responsible for turning
                             Zenitsu Agatsuma's senior, Kaigaku, into a demon,
@@ -62,7 +62,7 @@ export default function Main() {
                     <div className="grid grid-cols-2 gap-x-2">
                         <table>
                             <tr className="text-center bg-black text-lg">
-                                <td colSpan={4}>Names</td>
+                                <th colSpan={4}>Names</th>
                             </tr>
                             <tr className="bg-koku-dark-purple">
                                 <th>Kanji</th>
@@ -88,7 +88,7 @@ export default function Main() {
                         </table>
                         <table>
                             <tr className="text-center bg-black text-lg">
-                                <td colSpan={3}>Affiliation</td>
+                                <th colSpan={3}>Affiliation</th>
                             </tr>
                             <tr className="bg-koku-dark-purple">
                                 <th>Affiliation</th>
@@ -110,7 +110,7 @@ export default function Main() {
                     </div>
                     <table>
                         <tr className="text-center bg-black text-lg">
-                            <td colSpan={7}>Characteristics</td>
+                            <th colSpan={7}>Characteristics</th>
                         </tr>
                         <tr className="bg-koku-dark-purple">
                             <th>Race</th>
@@ -144,7 +144,7 @@ export default function Main() {
                     <div className="grid grid-cols-2 gap-x-2">
                         <table>
                             <tr className="text-center bg-black text-lg">
-                                <td colSpan={2}>Debuts</td>
+                                <th colSpan={2}>Debuts</th>
                             </tr>
                             <tr className="bg-koku-dark-purple">
                                 <th>Manga Debut</th>
@@ -160,7 +160,7 @@ export default function Main() {
                         </table>
                         <table>
                             <tr className="text-center bg-black text-lg">
-                                <td colSpan={3}>Portrayal</td>
+                                <th colSpan={3}>Portrayal</th>
                             </tr>
                             <tr className="bg-koku-dark-purple">
                                 <th>Japanese VA</th>
@@ -176,7 +176,7 @@ export default function Main() {
                     </div>
                     <table>
                         <tr className="text-center bg-black text-lg">
-                            <td colSpan={2}>Personal Status</td>
+                            <th colSpan={2}>Personal Status</th>
                         </tr>
                         <tr className="bg-koku-dark-purple">
                             <th>Status</th>
@@ -197,14 +197,15 @@ export default function Main() {
                         </tr>
                     </table>
                 </section>
+                {/* Appearance Section */}
                 <section className="grid grid-cols-1 gap-2">
                     <div>
                         <h2 className="text-xl font-comic">Appearance</h2>
                         <hr className=" border-2 text-black mb-2" />
                     </div>
 
-                    <p>
-                            Kokushibo is a tall man of muscular build and pale skin
+                    <p className="text-sm">
+                        Kokushibo is a tall man of muscular build and pale skin
                         complexion. He possesses long, spiky black hair with red
                         tips that he kept in a ponytail, along with two
                         shoulder-length, flowing, wavy bangs on each side that
@@ -223,7 +224,7 @@ export default function Main() {
                         down to his neck. His appearance was described as
                         profound and majestic by Muichiro Tokito.
                     </p>
-                    <p>
+                    <p className="text-sm">
                         Kokushibo adorned a purple-and-black hexagonal-patterned
                         nagagi kimono and black umanori-styled hakama pants tied
                         with a white uwa-obi. He also wore a pair of zōri with
@@ -233,7 +234,7 @@ export default function Main() {
                         tsuba and blade were shown to have eyes and veins. The
                         scabbard was also fleshy in appearance.
                     </p>
-                    <p>
+                    <p className="text-sm">
                         As a human, Kokushibo's look was almost identical to his
                         demon form, except for the number of eyes, his eminent
                         eyebrows, and his less paler skin. His eyes had maroon
@@ -243,7 +244,7 @@ export default function Main() {
                         adult. He also tied his hair in a short ponytail, unlike
                         Yoriichi, who wore his loose.
                     </p>
-                    <p>
+                    <p className="text-sm">
                         Due to being identical twins, Kokushibo greatly
                         resembled his younger brother Yoriichi. However, besides
                         their clothing, the biggest way to distinguish the twins
@@ -251,7 +252,7 @@ export default function Main() {
                         thicker hair in comparison to his brother's thinner and
                         curlier hair.
                     </p>
-                    <p>
+                    <p className="text-sm">
                         After being beheaded by Sanemi Shinazugawa and Gyomei
                         Himejima, Kokushibo evolved into a more grotesque and
                         monstrous form, with protruding fangs and mandibles,
@@ -264,6 +265,71 @@ export default function Main() {
                         tail-like appendages haphazardly sprouting all across
                         his entire body.
                     </p>
+                </section>
+                {/* Gallery Section */}
+                <section>
+                    <div>
+                        <h2 className="text-xl font-comic">Gallery</h2>
+                        <hr className=" border-2 text-black mb-2" />
+                    </div>
+                    <div className="grid grid-cols-3 gap-x-2 gap-y-5">
+                        <div>
+                            <img
+                                src="./src/assets/human_koku.webp"
+                                alt="Human child Kokushibo"
+                                className="h-60 m-auto border-3 border-black"
+                            />
+                            <p className="m-auto">
+                                Kokushibo's appearance as a human child.
+                            </p>
+                        </div>
+                        <div>
+                            <img
+                                src="./src/assets/human_adult_koku.webp"
+                                alt="Human adult Kokushibo"
+                                className="h-60 m-auto border-3 border-black"
+                            />
+                            <p className="m-auto">
+                                Kokushibo's appearance with his Demon Slayer
+                                Mark as an adult human.
+                            </p>
+                        </div>
+
+                        <div>
+                            <img
+                                src="./src/assets/koku_anime_full.webp"
+                                alt="Anime full body Kokushibo"
+                                className="h-60 m-auto border-3 border-black"
+                            />
+                            <p className="m-auto">
+                                Kokushibo's full appearance as a demon.
+                            </p>
+                        </div>
+
+                        <div>
+                            <img
+                                src="./src/assets/koku_blades.webp"
+                                alt="Kokushibo with several blades coming out of his body"
+                                className="h-60 m-auto border-3 border-black"
+                            />
+                            <p className="m-auto">
+                                Kokushibo's appearance with dozens of katanas
+                                protruding from his body.
+                            </p>
+                        </div>
+
+                        <div>
+                            <img
+                                src="./src/assets/koku_monster.webp"
+                                alt="Kokushibo's monster form"
+                                className="h-60 m-auto border-3 border-black"
+                            />
+                            <p className="m-auto">
+                                Kokushibo's appearance after undergoing a
+                                post-decapitation transformation.
+                            </p>
+                        </div>
+                    </div>
                 </section>
             </main>
         </>
