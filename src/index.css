@@ -10,8 +10,11 @@
 @theme {
     --font-comic: "comic", "serif";
     --color-koku-purple: #76418c;
+    --color-koku-dark-purple: #371645;
 }
 
-.id{
-    background-image: url(../src/assets/koku_print.png);
+th,
+td {
+    border: black solid 3px;
+    padding: 0.5rem;
 }
