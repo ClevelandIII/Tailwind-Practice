@@ -10,7 +10,17 @@
 @theme {
     --font-comic: "comic", "serif";
     --color-koku-purple: #76418c;
+    --color-koku-ptrans: #75418ce3;
     --color-koku-dark-purple: #371645;
+    --color-koku-dark-ptrans: #3716457e;
+    --color-koku-red: #de2220;
+    --color-koku-middle-red: #b2414e;
+    --color-koku-dark-red: #200b0d;
+    --color-koku-yellow: #faad46;
+}
+
+* {
+    line-height: 1.5;
 }
 
 th,
@@ -27,10 +37,30 @@ P {
     font-size: medium;
 }
 
-.close{
+.close {
     cursor: pointer;
 }
 
-.hide{
+.hide {
     display: none;
+}
+
+th {
+    color: #faad46;
+}
+
+ol li {
+    transition: background-color 0.5s;
+}
+
+ol li:hover {
+    background-color: #371645;
+}
+
+a {
+    cursor: pointer;
+}
+
+small{
+    color: #de2220;
 }

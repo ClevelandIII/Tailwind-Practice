@@ -1,4 +1,4 @@
-export default function Main() {
+export default function Main({refs}) {
     function close(e) {
         let id = e.target.id;
         let hide = document.getElementById(`${id}_content`);
@@ -26,62 +26,77 @@ export default function Main() {
         hide.className = newClass;
         console.log(hide.className);
     }
+
+    function profile(e) {
+        e.preventDefault();
+
+        let image = document.getElementById("profile");
+        let image_set = e.target.id;
+
+        if (image_set == "anime") {
+            image.src = "./src/assets/_Anime.webp";
+        }
+        if (image_set == "manga") {
+            image.src = "./src/assets/_Manga.webp";
+        }
+        if (image_set == "stage") {
+            image.src = "./src/assets/_Live.webp";
+        }
+    }
     return (
         <>
-            {/* Quote Section */}
-            <aside className="w-8/12 m-auto text-white mb-10">
-                <p>
-                    "I will stop your bleeding. Humans are so fragile.
-                    However... if you bleed to death... or if his lordship
-                    doesn't approve of you... and you die... then death was
-                    always your fate. In that case... you were no greater a man
-                    than that. Don't you... agree?”
-                </p>
-                <small>
-                    — Kokushibo to Muichiro Tokito before turning his attention
-                    to Genya Shinazugawa in True Feelings
-                </small>
-            </aside>
-            <main className="w-8/12 border-black border-6 bg-koku-purple m-auto p-10 text-white grid grid-cols-1 gap-10">
+
+            <main className="border-black border-3 bg-koku-ptrans m-auto p-5 text-white grid grid-cols-1 gap-10 w-4/5">
                 {/* Image and Main Description Section */}
-                <section className="grid grid-cols-2 gap-x-2">
+                <section className="grid grid-cols-2 gap-x-2 mt-5">
                     <div className="w-4/5 m-auto">
-                        <div>
+                        <div className="grid grid-cols-1">
                             <p className="bg-black text-white text-center text-lg font-comic">
                                 Kokushibo
                             </p>
+                            <div className="flex justify-evenly border-x-3 border-black bg-koku-dark-red text-koku-yellow">
+                                <a id="anime" href="" onClick={profile}>
+                                    Anime
+                                </a>
+                                <a id="manga" href="" onClick={profile}>
+                                    Manga
+                                </a>
+                                <a id="stage" href="" onClick={profile}>
+                                    Stage play
+                                </a>
+                            </div>
                         </div>
                         <img
-                            src="../src/assets/Kokushibo_back_facing.webp"
+                            src="../src/assets/_anime.webp"
                             alt="Anime Kokushibo facing back"
                             className="border-3 border-black bg-koku-dark-purple"
                             width="100%"
+                            id="profile"
                         />
                     </div>
 
                     <div className="grid grid-cols-1 gap-1 h-4/5">
                         <p className="text-sm">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kokushibo
-                            (黒こく死し牟ぼう Kokushibō?) is a major supporting
-                            antagonist of Demon Slayer: Kimetsu no Yaiba. He is
-                            a demon affiliated with the Twelve Kizuki, holding
-                            the highest position, Upper Rank One
+                            Kokushibo (黒こく死し牟ぼう Kokushibō?) is a major
+                            supporting antagonist of Demon Slayer: Kimetsu no
+                            Yaiba. He is a demon affiliated with the Twelve
+                            Kizuki, holding the highest position, Upper Rank One
                             (上じょう弦げんの壱いち Jōgen no Ichi?).
                         </p>
                         <p className="text-sm">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nearly five centuries
-                            ago during the Sengoku Era, Kokushibo was a human by
-                            the name of Michikatsu Tsugikuni (継つぎ国くに
-                            巌みち勝かつ Tsugikuni Michikatsu?), a former Demon
-                            Slayer, and the older twin brother of Yoriichi
-                            Tsugikuni, the strongest Demon Slayer to ever live.
+                            Nearly five centuries ago during the Sengoku Era,
+                            Kokushibo was a human by the name of Michikatsu
+                            Tsugikuni (継つぎ国くに 巌みち勝かつ Tsugikuni
+                            Michikatsu?), a former Demon Slayer, and the older
+                            twin brother of Yoriichi Tsugikuni, the strongest
+                            Demon Slayer to ever live.
                         </p>
                         <p className="text-sm">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kokushibo is also the
-                            ancestor of Muichiro Tokito and Yuichiro Tokito, and
-                            is responsible for turning Zenitsu Agatsuma's
-                            senior, Kaigaku, into a demon, who then defected to
-                            the Twelve Kizuki as the new Upper Rank Six.
+                            Kokushibo is also the ancestor of Muichiro Tokito
+                            and Yuichiro Tokito, and is responsible for turning
+                            Zenitsu Agatsuma's senior, Kaigaku, into a demon,
+                            who then defected to the Twelve Kizuki as the new
+                            Upper Rank Six.
                         </p>
                     </div>
                 </section>
@@ -226,7 +241,7 @@ export default function Main() {
                     </table>
                 </section>
                 {/* Appearance Section */}
-                <section className="grid grid-cols-1 gap-2">
+                <section className="grid grid-cols-1 gap-2" ref={refs.Appearance}>
                     <div>
                         <div className="flex justify-between">
                             <h2 className="text-xl font-comic">Appearance</h2>
@@ -248,7 +263,7 @@ export default function Main() {
                         id="Appearance_content"
                     >
                         <p className="text-sm">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kokushibo is a tall
+                            Kokushibo is a tall
                             man of muscular build and pale skin complexion. He
                             possesses long, spiky black hair with red tips that
                             he kept in a ponytail, along with two
@@ -271,7 +286,7 @@ export default function Main() {
                             Tokito.
                         </p>
                         <p className="text-sm">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kokushibo adorned a
+                            Kokushibo adorned a
                             purple-and-black hexagonal-patterned nagagi kimono
                             and black umanori-styled hakama pants tied with a
                             white uwa-obi. He also wore a pair of zōri with
@@ -283,7 +298,7 @@ export default function Main() {
                             appearance.
                         </p>
                         <p className="text-sm">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;As a human,
+                            As a human,
                             Kokushibo's look was almost identical to his demon
                             form, except for the number of eyes, his eminent
                             eyebrows, and his less paler skin. His eyes had
@@ -294,7 +309,7 @@ export default function Main() {
                             short ponytail, unlike Yoriichi, who wore his loose.
                         </p>
                         <p className="text-sm">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Due to being identical
+                            Due to being identical
                             twins, Kokushibo greatly resembled his younger
                             brother Yoriichi. However, besides their clothing,
                             the biggest way to distinguish the twins was their
@@ -303,7 +318,7 @@ export default function Main() {
                             hair.
                         </p>
                         <p className="text-sm">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After being beheaded
+                            After being beheaded
                             by Sanemi Shinazugawa and Gyomei Himejima, Kokushibo
                             evolved into a more grotesque and monstrous form,
                             with protruding fangs and mandibles, large, uneven
@@ -319,7 +334,7 @@ export default function Main() {
                     </div>
                 </section>
                 {/* Gallery Section */}
-                <section>
+                <section ref={refs.Gallery}>
                     <div>
                         <div className="flex justify-between">
                             <h2 className="text-xl font-comic">Gallery</h2>
@@ -397,7 +412,7 @@ export default function Main() {
                     </div>
                 </section>
                 {/* Personality Section */}
-                <section className="grid grid-cols-1 gap-2">
+                <section className="grid grid-cols-1 gap-2" ref={refs.Personality}>
                     <div>
                         <div className="flex justify-between">
                             <h2 className="text-xl font-comic">Personality</h2>
@@ -644,7 +659,7 @@ export default function Main() {
                     </div>
                 </section>
                 {/* Abilities Section */}
-                <section className="grid grid-cols-1 gap-2">
+                <section className="grid grid-cols-1 gap-2" ref={refs.Abilities}>
                     <div>
                         <div className="flex justify-between">
                             <h2 className="text-xl font-comic">Abilities</h2>
@@ -661,7 +676,10 @@ export default function Main() {
                         <hr className=" border-2 text-black mb-2" />
                     </div>
 
-                    <div className="show" id="Abilities_content">
+                    <div
+                        className="grid grid-cols-1 gap-2 show"
+                        id="Abilities_content"
+                    >
                         {/* Overall Abilities */}
                         <section className="grid grid-cols-1 gap-2">
                             <div>
@@ -1328,6 +1346,264 @@ export default function Main() {
                                     fight, causing his body to tremble
                                     uncontrollably.
                                 </p>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+                {/* Fighting Style Section*/}
+                <section className="grid grid-cols-1 gap-2" ref={refs.Fighting}>
+                    <div>
+                        <div className="flex justify-between">
+                            <h2 className="text-xl font-comic">
+                                Fighting Style
+                            </h2>
+                            <img
+                                src="./src/assets/down.svg"
+                                alt=""
+                                width="20px"
+                                className="close"
+                                onClick={close}
+                                id="Fighting"
+                            />
+                        </div>
+
+                        <hr className=" border-2 text-black mb-2" />
+                    </div>
+
+                    <div
+                        className="grid grid-cols-1 gap-2 show"
+                        id="Fighting_content"
+                    >
+                        {/* General Skills */}
+                        <section className="grid grid-cols-1 gap-2">
+                            <div>
+                                <div className="flex justify-between">
+                                    <h3 className="text-lg font-comic">
+                                        General Skills
+                                    </h3>
+                                    <img
+                                        src="./src/assets/down.svg"
+                                        alt=""
+                                        width="20px"
+                                        className="close"
+                                        onClick={close}
+                                        id="General"
+                                    />
+                                </div>
+                            </div>
+
+                            <div
+                                className="grid grid-cols-1 gap-3 show"
+                                id="General_content"
+                            >
+                                <p>
+                                    <div className="float-left m-3 w-60">
+                                        <img
+                                            src="./src/assets/koku_pillar.webp"
+                                            width="200px"
+                                            alt=""
+                                            className="m-auto border-3 border-black"
+                                        />
+                                        <small className=" m-auto text-black">
+                                            Kokushibo cuts down several pillars
+                                            in a single draw of his sword.
+                                        </small>
+                                    </div>
+                                    <strong>Master Swordsman: </strong>MDue to
+                                    training and refining his swordsmanship
+                                    skills for almost 500 years and getting a
+                                    major boost to his physical capabilities as
+                                    a demon, Kokushibo is one of the most
+                                    powerful and skilled swordsmen to have ever
+                                    lived. As a Demon Slayer in the Golden Age
+                                    of Demon Slayers, his swordsmanship was
+                                    already outstanding, as he learned many of
+                                    his techniques from Yoriichi himself in
+                                    order to form his own Breathing Style.
+                                    According to himself, his forms were so
+                                    refined and legendary that they have no
+                                    hopes of being passed down for future
+                                    generations.
+                                </p>
+                                <p>
+                                    Kokushibo's skill with his sword allows him
+                                    to defeat Akaza, a prodigious hand-to-hand
+                                    combatant and martial artist. After sensing
+                                    Akaza's death, a single draw from
+                                    Kokushibo's blade was powerful enough to
+                                    slash through a multitude of pillars in his
+                                    room. With his exceptional swordsmanship, he
+                                    could singlehandedly take on three Hashiras
+                                    – Sanemi, Muichiro, and Gyomei – when they
+                                    were marked, as well as Genya after he had
+                                    assimilated his blood to gain a small
+                                    portion of his power and develop his own
+                                    Blood Demon Art. Kokushibo's swordsmanship
+                                    is further empowered with the development of
+                                    his own Blood Demon Art, which greatly
+                                    improved the lethality and power of his
+                                    techniques, making every single one of his
+                                    sword swings incredibly deadly.
+                                </p>
+                            </div>
+                        </section>
+                        {/* Breathing Style */}
+                        <section className="grid grid-cols-1 gap-2">
+                            <div>
+                                <div className="flex justify-between">
+                                    <h3 className="text-lg font-comic">
+                                        Breathing Style
+                                    </h3>
+                                    <img
+                                        src="./src/assets/down.svg"
+                                        alt=""
+                                        width="20px"
+                                        className="close"
+                                        onClick={close}
+                                        id="Breathing"
+                                    />
+                                </div>
+                            </div>
+
+                            <div
+                                className="grid grid-cols-1 gap-3 show"
+                                id="Breathing_content"
+                            >
+                                <p>
+                                    <strong>
+                                        Moon Breathing (月つきの呼こ吸きゅう
+                                        Tsuki no kokyū?):{" "}
+                                    </strong>
+                                    Kokushibo is the first demon that utilized
+                                    Breathing Styles. His Breathing Style, in
+                                    particular, is one of the most dangerous and
+                                    powerful ones displayed thus far. Enhanced
+                                    with his Blood Demon Art, he can create many
+                                    chaotic crescent-moon blades when slashing
+                                    that vary in length and size in crescent
+                                    shaped sword attacks. Kokushibo had
+                                    continued to develop this Breathing Style
+                                    and had created over a dozen techniques over
+                                    the centuries he had lived.
+                                </p>
+                            </div>
+                        </section>
+                        {/* Blood Demon Art */}
+                        <section className="grid grid-cols-1 gap-2">
+                            <div>
+                                <div className="flex justify-between">
+                                    <h3 className="text-lg font-comic">
+                                        Blood Demon Art
+                                    </h3>
+                                    <img
+                                        src="./src/assets/down.svg"
+                                        alt=""
+                                        width="20px"
+                                        className="close"
+                                        onClick={close}
+                                        id="Slayer"
+                                    />
+                                </div>
+                            </div>
+
+                            <div
+                                className="grid grid-cols-1 gap-3 show"
+                                id="Slayer_content"
+                            >
+                                <p>
+                                    <div className="float-right m-3 w-60">
+                                        <img
+                                            src="./src/assets/koku_crescent.webp"
+                                            width="200px"
+                                            alt=""
+                                            className="m-auto border-3 border-black"
+                                        />
+                                        <small className=" m-auto text-black">
+                                            Kokushibo creating numerous crescent
+                                            moon-shaped blades.
+                                        </small>
+                                    </div>
+                                    <strong>Crescent Moon Blades: </strong>
+                                    Complementing his Moon Breathing,
+                                    Kokushibo's Blood Demon Art allows him to
+                                    create and manipulate dozens of sharp blades
+                                    shaped like traditional crescent moons from
+                                    his flesh katana. Created from his blood,
+                                    they can be either a bright yellow or a
+                                    bright blue in color. These crescent moon
+                                    blades are innately chaotic, constantly
+                                    changing in size, direction, and speed,
+                                    making Kokushibo's attacks extremely
+                                    unpredictable and unreadable as they have no
+                                    set pattern. This greatly enhances the power
+                                    of his techniques, making every single one
+                                    of his sword swings extremely deadly and
+                                    dangerous. He also seems to be capable of
+                                    using his Blood Demon Art as long as his
+                                    katana is unsheathed, allowing him to create
+                                    crescent moon blades even without swinging
+                                    his sword or unleashing a technique. The
+                                    volatile nature of his Blood Demon Art makes
+                                    it extremely challenging for Demon Slayers
+                                    to circumvent; Sanemi stated that if not for
+                                    his years of experience in the field of
+                                    demon hunting, he wouldn't have been able to
+                                    defend himself from Kokushibo's attacks.
+                                    <br />
+                                    <br />
+                                    Kokushibo's Blood Demon Art have a secondary
+                                    ability that allows him to manipulate the
+                                    shape and range of his sword slashes when
+                                    unleashing his Moon Breathing techniques.
+                                    His slashes usually create and are
+                                    surrounded by a pink or orange crescent
+                                    shape that carries his crescent moon blades.
+                                    Kokushibo seems to be able to control said
+                                    slashes to a certain extent, increasing
+                                    their range and shape to attack his target
+                                    in impossible ways under normal
+                                    circumstances. When he distorted his katana
+                                    into its branch-like appearance, his slashes
+                                    turn into a light purple color. Kokushibo
+                                    also displays the ability to exponentially
+                                    increase the range of his sword slash with
+                                    his Moon-Dragon Ringtail technique and shape
+                                    his slashes into a circular drill-like shape
+                                    with his Drilling Slashes, Moon Through
+                                    Bamboo Leaves technique.
+                                </p>
+                                <ul className="ml-10">
+                                    <li className="list-disc">
+                                        <div className="float-right m-3 w-60">
+                                            <img
+                                                src="./src/assets/koku_gyomei.webp"
+                                                width="200px"
+                                                alt=""
+                                                className="m-auto border-3 border-black"
+                                            />
+                                            <small className=" m-auto text-black">
+                                                Kokushibo discerns Gyomei's
+                                                strength by analyzing his
+                                                anatomy.
+                                            </small>
+                                        </div>
+                                        <strong>Transparent World: </strong>
+                                        Kokushibo has the ability to access the
+                                        Transparent World, allowing him to see
+                                        the muscles, blood flow, and joint
+                                        movements of his opponents, as well as
+                                        accurately predict and anticipate their
+                                        movements and attacks. Through this
+                                        ability, he was able to identify
+                                        Muichiro as his descendant, immediately
+                                        discern that Genya consumed demons to
+                                        gain strength, as well as determine
+                                        Muichiro, Sanemi, and Gyomei's strength,
+                                        even being able to tell that the latter
+                                        two's bodies and techniques are at their
+                                        peak.
+                                    </li>
+                                </ul>
                             </div>
                         </section>
                     </div>
